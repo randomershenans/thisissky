@@ -1,55 +1,63 @@
-.sky-pricing {
-  position: relative;
-  padding: 100px 0;
-  overflow: hidden;
+.note {
+  background: var(--ink);
+  color: var(--bg);
+  padding: var(--s-9) 0;
 }
-@media (max-width: 720px) { .sky-pricing { padding: 72px 0; } }
-.pricing-bg {
-  position: absolute; inset: 0;
-  background:
-    radial-gradient(ellipse 60% 70% at 20% 50%, rgba(124,58,237,0.1), transparent 60%),
-    radial-gradient(ellipse 40% 50% at 80% 50%, rgba(37,211,102,0.05), transparent 60%);
-  pointer-events: none;
+@media (min-width: 1024px) { .note { padding: var(--s-11) 0; } }
+
+.note-inner {
+  max-width: 720px;
 }
 
-.pricing-inner {
-  display: grid; grid-template-columns: 1fr 400px; gap: 64px; align-items: center;
-  position: relative; z-index: 1;
+.note .eyebrow {
+  color: rgba(247,244,237,0.55);
+  margin-bottom: var(--s-7);
 }
-@media (max-width: 900px) { .pricing-inner { grid-template-columns: 1fr; gap: 40px; } }
+.note .eyebrow::before { background: rgba(247,244,237,0.35); }
 
-.pricing-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sky-bright); margin-bottom: 16px; }
-.pricing-left h2 { font-size: clamp(28px, 3.8vw, 44px); color: #fff; margin-bottom: 20px; line-height: 1.12; }
-.pricing-left p { font-size: 16px; color: var(--wa-dark-muted); line-height: 1.7; margin-bottom: 32px; }
-
-.pricing-includes { display: flex; flex-direction: column; gap: 10px; }
-.pricing-feature { display: flex; align-items: center; gap: 10px; font-size: 15px; color: var(--wa-dark-text); }
-.pricing-check {
-  width: 20px; height: 20px; border-radius: 50%;
-  background: rgba(37,211,102,0.15); color: var(--wa-green);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 11px; font-weight: 700; flex-shrink: 0;
+.note h2 {
+  font-family: var(--font-display);
+  font-weight: 380;
+  font-size: clamp(32px, 4.6vw, 54px);
+  line-height: 1.08;
+  letter-spacing: -0.028em;
+  font-variation-settings: 'opsz' 96, 'SOFT' 30;
+  color: var(--bg);
+  margin-bottom: var(--s-7);
+}
+.note h2 em {
+  font-style: italic;
+  font-weight: 360;
+  color: rgba(247,244,237,0.75);
+  font-variation-settings: 'opsz' 96, 'SOFT' 60, 'WONK' 1;
 }
 
-/* Card */
-.pricing-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: var(--r-2xl);
-  padding: 36px 32px;
-  text-align: center;
-  box-shadow: 0 0 60px -20px var(--sky-glow);
+.note p {
+  font-size: 18px;
+  line-height: 1.72;
+  color: rgba(247,244,237,0.72);
+  max-width: 60ch;
 }
-@media (max-width: 480px) { .pricing-card { padding: 28px 20px; } }
-.pricing-card-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sky-bright); margin-bottom: 20px; }
-.pricing-amount { display: flex; align-items: flex-start; justify-content: center; gap: 4px; margin-bottom: 16px; }
-.pricing-currency { font-size: 28px; font-weight: 700; color: #fff; margin-top: 10px; }
-.pricing-num { font-size: 88px; font-weight: 800; color: #fff; line-height: 1; letter-spacing: -0.04em; }
-.pricing-per { font-size: 18px; color: var(--wa-dark-muted); align-self: flex-end; margin-bottom: 14px; }
-.pricing-note { font-size: 13.5px; color: var(--wa-dark-muted); line-height: 1.6; margin-bottom: 28px; }
-.pricing-cta { width: 100%; justify-content: center; padding: 16px; font-size: 16px; border-radius: var(--r-lg); }
-.pricing-trust {
-  display: flex; flex-wrap: wrap; justify-content: center; gap: 6px;
-  margin-top: 16px; font-size: 12px; color: rgba(233,238,240,0.35);
+.note p + p { margin-top: var(--s-4); }
+
+.signature {
+  margin-top: var(--s-7);
+  font-family: var(--font-display);
+  font-weight: 380;
+  font-style: italic;
+  font-size: 26px;
+  color: rgba(247,244,237,0.9);
+  letter-spacing: -0.01em;
+  font-variation-settings: 'opsz' 60, 'SOFT' 60, 'WONK' 1;
 }
-.pt-sep { opacity: 0.4; }
+.signature small {
+  display: block;
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: rgba(247,244,237,0.45);
+  text-transform: uppercase;
+  margin-top: 6px;
+}

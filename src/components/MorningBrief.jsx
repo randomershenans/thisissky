@@ -1,123 +1,70 @@
-import { motion } from 'framer-motion'
 import './MorningBrief.css'
-
-const BRIEF_MESSAGES = [
-  {
-    type: 'greeting',
-    text: 'Good morning. Here\'s what I\'m watching for you today.',
-  },
-  {
-    type: 'urgent',
-    icon: '🔴',
-    label: 'Urgent',
-    title: 'Anya\'s term sheet expires Friday',
-    detail: 'You said her offer was the most generous. This is the one to close.',
-    source: 'tracked 18 days',
-  },
-  {
-    type: 'attention',
-    icon: '👤',
-    label: 'Attention',
-    title: 'Marie demo in 48 hours',
-    detail: 'She\'s been responsive. Trajectory is rising. Deck is ready.',
-    source: 'confirmed 3 weeks ago',
-  },
-  {
-    type: 'nudge',
-    icon: '📞',
-    label: 'Nudge',
-    title: 'David — 11 days since last contact',
-    detail: 'You mentioned you\'d follow up. He hasn\'t heard from you.',
-    source: 'you flagged this',
-  },
-  {
-    type: 'rising',
-    icon: '↗',
-    label: 'Rising',
-    title: 'Carol\'s engagement up 0.04 over 30 days',
-    detail: 'She\'s been opening your messages faster. Might be worth a touch.',
-    source: 'trajectory signal',
-  },
-]
 
 export default function MorningBrief() {
   return (
-    <section className="brief-section">
-      <div className="brief-bg" aria-hidden="true" />
+    <section className="day-section" id="day" aria-labelledby="day-title">
       <div className="container">
-        <motion.div
-          className="brief-head"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <div className="brief-eyebrow">Every morning, unprompted</div>
-          <h2>You wake up.<br />Sky's already been working.</h2>
-          <p className="brief-lede">
-            Before you've had coffee, Sky has reviewed your network,
-            your commitments, your open threads. And it tells you what matters —
-            in plain language, with no noise.
+        <div className="day-header reveal">
+          <p className="eyebrow">A regular Tuesday</p>
+          <h2 id="day-title">She doesn't wait to be asked.</h2>
+          <p>
+            06:30 AM, your phone buzzes once. Not a notification. A briefing.
+            Then she stays out of your way until you need her.
           </p>
-        </motion.div>
+        </div>
 
-        <motion.div
-          className="brief-phone"
-          initial={{ opacity: 0, y: 32 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <div className="brief-phone-inner">
-            <div className="brief-wa-header">
-              <div className="brief-avatar">S</div>
-              <div className="brief-header-info">
-                <div className="brief-name">Sky</div>
-                <div className="brief-status">
-                  <span className="brief-status-dot" />
-                  Morning brief · 7:02 AM
-                </div>
+        <div className="day-wrap reveal">
+
+          <div className="day-phone" role="img" aria-label="Example WhatsApp conversation with Sky">
+            <div className="day-phone-hdr">
+              <div className="day-av">S</div>
+              <div>
+                <div className="day-name">Sky</div>
+                <div className="day-status">online · typing...</div>
               </div>
             </div>
-            <div className="brief-messages">
-              {BRIEF_MESSAGES.map((msg, i) => (
-                <motion.div
-                  key={i}
-                  className={`brief-msg ${msg.type}`}
-                  initial={{ opacity: 0, y: 8 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1, duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                >
-                  {msg.type === 'greeting' ? (
-                    <p className="brief-greeting">{msg.text}</p>
-                  ) : (
-                    <>
-                      <div className="brief-msg-top">
-                        <span className="brief-icon">{msg.icon}</span>
-                        <span className={`brief-label label-${msg.type}`}>{msg.label}</span>
-                        <span className="brief-source">{msg.source}</span>
-                      </div>
-                      <div className="brief-title">{msg.title}</div>
-                      <div className="brief-detail">{msg.detail}</div>
-                    </>
-                  )}
-                </motion.div>
-              ))}
+            <div className="day-msgs">
+              <span className="day-time">Tuesday · 06:31</span>
+              <div className="day-bubble from-sky">
+                <strong>Tuesday — 06:30</strong>
+                {'\n\n'}
+                <strong>Money first.</strong>{'\n'}
+                Adam's invoice still unpaid (4 days late). Two new briefs scored 80+ overnight.
+                {'\n\n'}
+                <strong>Today.</strong>{'\n'}
+                14:00 — Pablo{'\n'}
+                17:30 — Harper school pickup
+                {'\n\n'}
+                <strong>Heads-up.</strong>{'\n'}
+                Manuel hasn't replied since Friday. Want me to send something casual?
+              </div>
+              <span className="day-time">06:34</span>
+              <div className="day-bubble from-you">yeah send something light</div>
+              <span className="day-time">06:35</span>
+              <div className="day-bubble from-sky">
+                On it. Keeping it casual, going to mention the IATA panel as the hook.{'\n'}
+                <em>Sending in 5 unless you say no.</em>
+              </div>
+              <div className="day-bubble from-you">👍</div>
             </div>
           </div>
-        </motion.div>
 
-        <motion.p
-          className="brief-caption"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          This isn't a summary of your calendar. It's Sky reading your relationships
-          and telling you where to focus. Every morning, automatically.
-        </motion.p>
+          <aside className="day-aside">
+            <h4>What just happened.</h4>
+            <p>
+              Sky checked your calendar, your finances, your inbox, and the people you've gone quiet
+              with, all before you opened your eyes.
+            </p>
+            <p>
+              She doesn't ask permission for the things she should obviously do. She tells you,
+              gives you a beat to override, then ships it.
+            </p>
+            <p>
+              That's the difference between an assistant and a chatbot.
+            </p>
+          </aside>
+
+        </div>
       </div>
     </section>
   )
