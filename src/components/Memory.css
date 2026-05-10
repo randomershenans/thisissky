@@ -1,0 +1,104 @@
+.memory-section { padding: 100px 0; }
+@media (max-width: 720px) { .memory-section { padding: 72px 0; } }
+
+.memory-head { max-width: 640px; margin: 0 auto 72px; text-align: center; }
+@media (max-width: 720px) { .memory-head { margin-bottom: 48px; text-align: left; } }
+
+.mem-eyebrow {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--sky); margin-bottom: 16px;
+}
+.memory-head h2 {
+  font-size: clamp(32px, 4.5vw, 52px);
+  color: var(--text-dark);
+  margin-bottom: 20px;
+}
+.mem-lede { font-size: clamp(15px, 1.3vw, 18px); color: rgba(10,10,15,0.6); line-height: 1.65; }
+
+/* Thread */
+.memory-thread {
+  max-width: 680px; margin: 0 auto 56px;
+  display: flex; flex-direction: column; gap: 0;
+  position: relative;
+}
+
+.mem-event {
+  display: flex; gap: 20px;
+  position: relative;
+  padding-bottom: 40px;
+}
+.mem-event:last-child { padding-bottom: 0; }
+
+.mem-dot-wrap { flex-shrink: 0; width: 16px; display: flex; justify-content: center; padding-top: 4px; }
+.mem-dot {
+  width: 12px; height: 12px; border-radius: 50%;
+  background: rgba(10,10,15,0.15);
+  border: 2px solid rgba(10,10,15,0.2);
+  position: relative; z-index: 1;
+}
+.sky-dot {
+  background: var(--sky);
+  border-color: var(--sky);
+  box-shadow: 0 0 0 4px var(--sky-soft);
+  width: 14px; height: 14px;
+}
+.mem-line {
+  position: absolute;
+  left: 6px; top: 18px; bottom: -2px;
+  width: 2px;
+  background: linear-gradient(to bottom, rgba(10,10,15,0.1), rgba(124,58,237,0.3));
+  z-index: 0;
+}
+
+.mem-content { flex: 1; }
+.mem-date {
+  font-size: 11.5px; font-weight: 600; color: rgba(10,10,15,0.4);
+  text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px;
+}
+.mem-event-sky .mem-date { color: var(--sky); }
+
+.mem-you {
+  display: flex; flex-direction: column; gap: 3px;
+  padding: 12px 14px;
+  background: rgba(10,10,15,0.04);
+  border: 1px solid rgba(10,10,15,0.08);
+  border-radius: var(--r-md);
+  margin-bottom: 8px;
+}
+.mem-you-label { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(10,10,15,0.35); }
+.mem-you-text { font-size: 14px; color: rgba(10,10,15,0.75); line-height: 1.45; font-style: italic; }
+
+.mem-stored {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-mono); font-size: 11.5px; color: var(--sky);
+  background: var(--sky-soft); padding: 5px 10px; border-radius: var(--r-full);
+  width: fit-content;
+}
+.mem-stored-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--sky); flex-shrink: 0; }
+
+.mem-sky-msg { display: flex; align-items: flex-start; gap: 10px; }
+.mem-sky-avatar {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--sky), var(--sky-bright));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 700; color: #fff; flex-shrink: 0;
+}
+.mem-sky-bubble {
+  padding: 10px 14px;
+  background: var(--dark-2);
+  color: var(--wa-dark-text);
+  border-radius: 10px 10px 10px 2px;
+  font-size: 14px; line-height: 1.5;
+  border: 1px solid rgba(124,58,237,0.3);
+  box-shadow: 0 0 20px -8px var(--sky-glow);
+}
+
+/* Callout */
+.memory-callout {
+  max-width: 560px; margin: 0 auto;
+  text-align: center; padding: 28px 32px;
+  background: rgba(124,58,237,0.06);
+  border: 1px solid rgba(124,58,237,0.15);
+  border-radius: var(--r-xl);
+}
+.memory-callout p { font-size: 16px; color: rgba(10,10,15,0.7); line-height: 1.65; }
